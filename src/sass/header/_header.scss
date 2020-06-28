@@ -1,1 +1,13 @@
 /*Header Section*/
+.menu {
+  text-align: center;
+  border: 1px solid $main-color;
+  border-radius: 5px;
+  margin-bottom: 35px;
+
+  .menu__title {
+    color: $main-color;
+    text-transform: uppercase;
+  }
+}
+
