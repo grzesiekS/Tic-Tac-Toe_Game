@@ -1,14 +1,12 @@
 import Game from './Game/Game.js';
 
 const app = {
-  initGame:  function() {
+  initGame: () => {
     new Game(document.querySelector('.game_content'));
   },
 
-  init: function() {
-    const thisApp = this;
-
-    thisApp.initGame();
+  init: () => {
+    app.initGame();
   },
 };
 
