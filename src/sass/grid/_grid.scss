@@ -1,0 +1,19 @@
+/* Grid */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+section {
+  background-color: $light-gray-color;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
