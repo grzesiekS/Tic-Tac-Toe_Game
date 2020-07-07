@@ -7,15 +7,13 @@ class Player {
     thisPlayer.gameOption = gameOption;
   }
 
-  addClassToElement(element) {
+  addContentToDOMObject(element) {
     const thisPlayer = this;
-
-    /*START IF: If element classList value is not empty string */
-    if(element.classList.value == ''){
-      /*[DONE] Add class to element */
-      element.classList.add(...thisPlayer.gameOption);
-
-    /*END IF: If element classList value is not empty string */
+    /*START IF: If innerHTML of DOM Object is not equal '' */
+    if(element.innerHTML == '') {
+      /*[DONE] Add gameOption to innerHTML */
+      element.innerHTML = thisPlayer.gameOption;
+    /*END IF: If innerHTML of DOM Object is not equal '' */
     }
   }
 }

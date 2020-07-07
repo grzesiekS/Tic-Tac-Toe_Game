@@ -28,8 +28,8 @@ class Game {
 
           /*START IF: If player has gameTurn true*/
           if(playerOpt.gameTurn == true){
-            /*[DONE] Use Player method to add class to element i of game content */
-            playerOpt.addClassToElement(element.querySelector('i'));
+            /* Add element (cross/circle) to DOM Object*/
+            playerOpt.addContentToDOMObject(element);
           /*END IF: If player has gameTurn true*/
           }
 
@@ -45,7 +45,6 @@ class Game {
     thisGame.dom = {};
     thisGame.dom.wrapper = element;
     thisGame.dom.gameContent = thisGame.dom.wrapper.querySelectorAll(gameContent.gameContentField);
-    console.log(thisGame.dom.gameContent);
   }
 }
 
