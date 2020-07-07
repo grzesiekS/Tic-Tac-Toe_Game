@@ -17,6 +17,7 @@
     border-right: 2px solid $dark-color;
     border-bottom: 2px solid $dark-color;
     text-align: center;
+    transition: $transition;
 
     &:nth-child(3n) {
       border-right: none;
@@ -24,6 +25,11 @@
 
     &:nth-child(7), &:nth-child(8), &:nth-child(9) {
       border-bottom: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $main-color;
     }
 
     i {
