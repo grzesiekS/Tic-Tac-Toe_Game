@@ -16,6 +16,19 @@ class Player {
     /*END IF: If innerHTML of DOM Object is not equal '' */
     }
   }
+
+  changeGameTurn() {
+    const thisPlayer = this;
+
+    /*START IF: If Game Turn for the Player is true */
+    if(thisPlayer.gameTurn){
+      thisPlayer.gameTurn = false;
+    /*ELSE: If Game Turn for the Player is false */
+    } else {
+      thisPlayer.gameTurn = true;
+    /*END IF: If Game Turn for the Player is true */
+    }
+  }
 }
 
 export default Player;
