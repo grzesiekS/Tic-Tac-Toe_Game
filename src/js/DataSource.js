@@ -5,8 +5,8 @@ export const wrappers = {
 export const gameContent = {
   gameContentField: '.game_content__field',
   options: {
-    cross: ['fas', 'fa-times'],
-    circle: ['far', 'fa-circle'],
+    cross: '<i class="fas fa-times"></i>',
+    circle: '<i class="far fa-circle"></i>',
   },
   attributes: {
     cross: 'cross',
