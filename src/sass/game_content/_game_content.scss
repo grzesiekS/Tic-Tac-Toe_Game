@@ -41,8 +41,7 @@
       font-size: 36px;
 
       &:hover {
-        cursor: pointer;
-        background-color: $main-color;
+        cursor: no-drop;
       }
     }
   }
