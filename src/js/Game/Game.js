@@ -21,19 +21,29 @@ class Game {
       element.addEventListener('click', function(){
         event.preventDefault();
 
-        /*START LOOP: For each player in players object */
-        for(let player in thisGame.players) {
-          /* Get player options from object players */
-          const playerOpt = thisGame.players[player];
+        if(element.innerHTML == '') {
+          /*START LOOP: For each player in players object */
+          for(let player in thisGame.players) {
+            /* Get player options from object players */
+            const playerOpt = thisGame.players[player];
 
-          /*START IF: If player has gameTurn true*/
-          if(playerOpt.gameTurn == true){
-            /* Add element (cross/circle) to DOM Object*/
-            playerOpt.addContentToDOMObject(element);
-          /*END IF: If player has gameTurn true*/
+            /*START IF: If player has gameTurn true*/
+            if(playerOpt.gameTurn){
+              /*[DONE] Add element (cross/circle) to DOM Object*/
+              playerOpt.addContentToDOMObject(element);
+
+              /*[DONE] Change players turn */
+              playerOpt.changeGameTurn();
+
+            /*ELSE: If player has gameTurn true*/
+            } else {
+              /*[DONE] Change players turn */
+              playerOpt.changeGameTurn();
+
+            /*END IF: If player has gameTurn true*/
+            }
+          /*END LOOP: For each player in players object */
           }
-
-        /*END LOOP: For each player in players object */
         }
       });
     });

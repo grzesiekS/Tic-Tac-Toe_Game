@@ -22,6 +22,7 @@ class Player {
 
     /*START IF: If Game Turn for the Player is true */
     if(thisPlayer.gameTurn){
+      /* Change */
       thisPlayer.gameTurn = false;
     /*ELSE: If Game Turn for the Player is false */
     } else {
