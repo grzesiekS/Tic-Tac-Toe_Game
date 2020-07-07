@@ -14,7 +14,7 @@ class Player {
       /*[DONE] Add gameOption to innerHTML */
       element.innerHTML = thisPlayer.gameOption;
 
-      /* Add atribute to DOM Object */
+      /*[DONE] Add atribute to DOM Object */
       thisPlayer.addAtributeToDOMObject(element);
 
     /*END IF: If innerHTML of DOM Object is not equal '' */
