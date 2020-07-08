@@ -3,6 +3,21 @@
   padding: 70px 0;
 }
 
+.gamePanel {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  .playerPanel {
+    flex: 1;
+    text-align: center;
+
+    &.active {
+      color: $main-color;
+    }
+  }
+}
+
 .game_content__panel {
   width: $game-width;
   height: $game-height;
