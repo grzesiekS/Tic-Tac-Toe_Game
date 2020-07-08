@@ -167,7 +167,7 @@ class Game {
     for(let obj in objArray) {
       /*END IF: If obj has value equals null */
       if(objArray[obj] == null) {
-        /* increment countNull value */
+        /*[DONE] increment countNull value */
         countNull++;
       /*END IF: If obj has value equals null */
       }
