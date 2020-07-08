@@ -12,7 +12,8 @@ class Game {
 
     thisGame.getElement(element);
     thisGame.initActions();
-    thisGame.createDOMelement('h1');
+    thisGame.AddPlayersNameToPlayerPanel();
+
   }
 
   initActions() {
@@ -180,6 +181,18 @@ class Game {
   createDOMelement(element){
     const DOMelement = document.createElement(element);
     return DOMelement;
+  }
+
+  appendChildToDOMelement(element, parent, content) {
+    element.innerHTML = content;
+    parent.appendChild(element);
+  }
+
+  AddPlayersNameToPlayerPanel() {
+    const thisGame = this;
+
+    thisGame.appendChildToDOMelement(thisGame.createDOMelement('h1'), thisGame.dom.playerPanel[0], thisGame.players.player1.playerName);
+    thisGame.appendChildToDOMelement(thisGame.createDOMelement('h1'), thisGame.dom.playerPanel[1], thisGame.players.player2.playerName);
   }
 
   getElement(element) {
