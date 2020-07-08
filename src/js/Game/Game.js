@@ -12,6 +12,7 @@ class Game {
 
     thisGame.getElement(element);
     thisGame.initActions();
+    thisGame.createDOMelement('h1');
   }
 
   initActions() {
@@ -176,12 +177,18 @@ class Game {
     return countNull;
   }
 
+  createDOMelement(element){
+    const DOMelement = document.createElement(element);
+    return DOMelement;
+  }
+
   getElement(element) {
     const thisGame = this;
 
     thisGame.dom = {};
     thisGame.dom.wrapper = element;
     thisGame.dom.gameContent = thisGame.dom.wrapper.querySelectorAll(gameContent.gameContentField);
+    thisGame.dom.playerPanel = thisGame.dom.wrapper.querySelectorAll(gameContent.playerPanel);
   }
 }
 
