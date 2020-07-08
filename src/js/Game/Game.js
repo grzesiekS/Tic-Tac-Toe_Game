@@ -144,6 +144,12 @@ class Game {
 
     /*END IF: Cross right */
     }
+
+    /*START IF:  If Null count is equal or lower then 2*/
+    if (thisGame.countNullInObject(gameFields) <= 2) {
+      thisGame.gameReset();
+    /*END IF:  If Null count is equal or lower then 2*/
+    }
   }
 
   gameReset() {
@@ -153,6 +159,21 @@ class Game {
       element.removeAttribute('player-name');
       element.innerHTML = '';
     });
+  }
+
+  countNullInObject(objArray) {
+    let countNull = 0;
+
+    for(let obj in objArray) {
+      /*END IF: If obj has value equals null */
+      if(objArray[obj] == null) {
+        /* increment countNull value */
+        countNull++;
+      /*END IF: If obj has value equals null */
+      }
+    }
+
+    return countNull;
   }
 
   getElement(element) {
