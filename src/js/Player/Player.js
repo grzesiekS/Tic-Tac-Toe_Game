@@ -40,6 +40,12 @@ class Player {
 
     element.setAttribute('player-name', thisPlayer.playerName);
   }
+
+  setPLayerScore() {
+    const thisPlayer = this;
+
+    thisPlayer.score++;
+  }
 }
 
 export default Player;

@@ -72,7 +72,7 @@ class Game {
     if(gameFields.field_1 == gameFields.field_2 && gameFields.field_2 == gameFields.field_3){
 
       if(gameFields.field_1 != null) {
-        thisGame.gameReset();
+        thisGame.gameResult(gameFields.field_1);
       }
 
     /*END IF: First row equals */
@@ -82,7 +82,7 @@ class Game {
     if(gameFields.field_4 == gameFields.field_5 && gameFields.field_5 == gameFields.field_6){
 
       if(gameFields.field_4 != null) {
-        thisGame.gameReset();
+        thisGame.gameResult(gameFields.field_4);
       }
 
     /*END IF: Second row equals */
@@ -92,7 +92,7 @@ class Game {
     if(gameFields.field_7 == gameFields.field_8 && gameFields.field_8 == gameFields.field_9){
 
       if(gameFields.field_7 != null) {
-        thisGame.gameReset();
+        thisGame.gameResult(gameFields.field_7);
       }
 
     /*END IF: third row equals */
@@ -102,7 +102,7 @@ class Game {
     if(gameFields.field_1 == gameFields.field_4 && gameFields.field_4 == gameFields.field_7){
 
       if(gameFields.field_1 != null) {
-        thisGame.gameReset();
+        thisGame.gameResult(gameFields.field_1);
       }
 
     /*END IF: First column equals */
@@ -112,7 +112,7 @@ class Game {
     if(gameFields.field_2 == gameFields.field_5 && gameFields.field_5 == gameFields.field_8){
 
       if(gameFields.field_2 != null) {
-        thisGame.gameReset();
+        thisGame.gameResult(gameFields.field_2);
       }
 
     /*END IF: Second column equals */
@@ -122,7 +122,7 @@ class Game {
     if(gameFields.field_3 == gameFields.field_6 && gameFields.field_6 == gameFields.field_9){
 
       if(gameFields.field_3 != null) {
-        thisGame.gameReset();
+        thisGame.gameResult(gameFields.field_3);
       }
 
     /*END IF: Third column equals */
@@ -132,7 +132,7 @@ class Game {
     if(gameFields.field_1 == gameFields.field_5 && gameFields.field_5 == gameFields.field_9){
 
       if(gameFields.field_1 != null) {
-        thisGame.gameReset();
+        thisGame.gameResult(gameFields.field_1);
       }
 
     /*END IF: Cross left */
@@ -142,14 +142,14 @@ class Game {
     if(gameFields.field_3 == gameFields.field_5 && gameFields.field_5 == gameFields.field_7){
 
       if(gameFields.field_3 != null) {
-        thisGame.gameReset();
+        thisGame.gameResult(gameFields.field_3);
       }
 
     /*END IF: Cross right */
     }
 
     /*START IF:  If Null count is equal or lower then 2*/
-    if (thisGame.countNullInObject(gameFields) <= 2) {
+    if (thisGame.countNullInObject(gameFields) < 2) {
       thisGame.gameReset();
     /*END IF:  If Null count is equal or lower then 2*/
     }
@@ -162,6 +162,13 @@ class Game {
       element.removeAttribute('player-name');
       element.innerHTML = '';
     });
+  }
+
+  gameResult(winnerName) {
+    const thisGame = this;
+
+    thisGame.changePlayerScore(winnerName);
+    thisGame.gameReset();
   }
 
   countNullInObject(objArray) {
@@ -208,6 +215,25 @@ class Game {
 
   setAttributeToDOMelement(element, attribute, attValue) {
     element.setAttribute(attribute, attValue);
+  }
+
+  changePlayerScore(name) {
+    const thisGame = this;
+
+    /*START LOOP: for every player in players */
+    for(let player in thisGame.players) {
+      /*[DONE] Get player details*/
+      const playerDetails = thisGame.players[player];
+
+      /*START IF: player name equals name */
+      if(playerDetails.playerName == name) {
+        /*[DONE] Change player score*/
+        playerDetails.setPLayerScore();
+      /*END IF: player name equals name */
+      }
+
+      /*END LOOP: for every player in players */
+    }
   }
 
   getElement(element) {
