@@ -13,6 +13,7 @@ class Game {
     thisGame.getElement(element);
     thisGame.initActions();
     thisGame.AddPlayersNameToPlayerPanel();
+    thisGame.AddPlayerScoreToPlayerPanel();
 
   }
 
@@ -193,6 +194,13 @@ class Game {
 
     thisGame.appendChildToDOMelement(thisGame.createDOMelement('h1'), thisGame.dom.playerPanel[0], thisGame.players.player1.playerName);
     thisGame.appendChildToDOMelement(thisGame.createDOMelement('h1'), thisGame.dom.playerPanel[1], thisGame.players.player2.playerName);
+  }
+
+  AddPlayerScoreToPlayerPanel() {
+    const thisGame= this;
+
+    thisGame.appendChildToDOMelement(thisGame.createDOMelement('p'), thisGame.dom.playerPanel[0], 'Score: ' + thisGame.players.player1.score);
+    thisGame.appendChildToDOMelement(thisGame.createDOMelement('p'), thisGame.dom.playerPanel[1], 'Score: ' + thisGame.players.player2.score);
   }
 
   getElement(element) {
