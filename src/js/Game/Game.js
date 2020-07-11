@@ -194,6 +194,9 @@ class Game {
 
     thisGame.appendChildToDOMelement(thisGame.createDOMelement('h1'), thisGame.dom.playerPanel[0], thisGame.players.player1.playerName);
     thisGame.appendChildToDOMelement(thisGame.createDOMelement('h1'), thisGame.dom.playerPanel[1], thisGame.players.player2.playerName);
+
+    thisGame.setAttributeToDOMelement(thisGame.dom.playerPanel[0],'player',thisGame.players.player1.playerName);
+    thisGame.setAttributeToDOMelement(thisGame.dom.playerPanel[1],'player',thisGame.players.player2.playerName);
   }
 
   AddPlayerScoreToPlayerPanel() {
@@ -201,6 +204,10 @@ class Game {
 
     thisGame.appendChildToDOMelement(thisGame.createDOMelement('p'), thisGame.dom.playerPanel[0], 'Score: ' + thisGame.players.player1.score);
     thisGame.appendChildToDOMelement(thisGame.createDOMelement('p'), thisGame.dom.playerPanel[1], 'Score: ' + thisGame.players.player2.score);
+  }
+
+  setAttributeToDOMelement(element, attribute, attValue) {
+    element.setAttribute(attribute, attValue);
   }
 
   getElement(element) {
