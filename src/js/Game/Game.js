@@ -202,8 +202,8 @@ class Game {
     thisGame.appendChildToDOMelement(thisGame.createDOMelement('h1'), thisGame.dom.playerPanel[0], thisGame.players.player1.playerName);
     thisGame.appendChildToDOMelement(thisGame.createDOMelement('h1'), thisGame.dom.playerPanel[1], thisGame.players.player2.playerName);
 
-    thisGame.setAttributeToDOMelement(thisGame.dom.playerPanel[0],'player',thisGame.players.player1.playerName);
-    thisGame.setAttributeToDOMelement(thisGame.dom.playerPanel[1],'player',thisGame.players.player2.playerName);
+    thisGame.setAttributeToDOMelement(thisGame.dom.playerPanel[0],'id',thisGame.players.player1.playerName);
+    thisGame.setAttributeToDOMelement(thisGame.dom.playerPanel[1],'id',thisGame.players.player2.playerName);
   }
 
   AddPlayerScoreToPlayerPanel() {
@@ -229,6 +229,9 @@ class Game {
       if(playerDetails.playerName == name) {
         /*[DONE] Change player score*/
         playerDetails.setPLayerScore();
+
+        /*Update player Panel*/
+        playerDetails.changePlayerScoreInPlayerPanel();
       /*END IF: player name equals name */
       }
 

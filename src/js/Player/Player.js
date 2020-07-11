@@ -46,6 +46,19 @@ class Player {
 
     thisPlayer.score++;
   }
+
+  changePlayerScoreInPlayerPanel() {
+    const thisPlayer = this;
+
+    /*[DONE] Get player Panel for selected player*/
+    const playerPanel = document.getElementById(thisPlayer.playerName);
+
+    /*[DONE] Get score element from playerPanel */
+    const scoreElement = playerPanel.querySelector('p');
+
+    /*[DONE] Update score for selected player */
+    scoreElement.innerHTML = 'Score: ' + thisPlayer.score;
+  }
 }
 
 export default Player;
