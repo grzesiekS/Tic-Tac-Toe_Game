@@ -230,8 +230,9 @@ class Game {
         /*[DONE] Change player score*/
         playerDetails.setPLayerScore();
 
-        /*Update player Panel*/
+        /*[DONE] Update player Panel*/
         playerDetails.changePlayerScoreInPlayerPanel();
+
       /*END IF: player name equals name */
       }
 
