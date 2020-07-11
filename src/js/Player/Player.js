@@ -59,6 +59,21 @@ class Player {
     /*[DONE] Update score for selected player */
     scoreElement.innerHTML = 'Score: ' + thisPlayer.score;
   }
+
+  changeActiveClassPlayerPanel() {
+    const thisPlayer = this;
+
+    /*[DONE] Get player Panel for selected player*/
+    const playerPanel = document.getElementById(thisPlayer.playerName);
+
+    /*START IF: If player game turn equals true*/
+    if(thisPlayer.gameTurn) {
+      playerPanel.classList.add('active');
+    } else {
+      playerPanel.classList.remove('active');
+    /*END IF: If player game turn equals true*/
+    }
+  }
 }
 
 export default Player;

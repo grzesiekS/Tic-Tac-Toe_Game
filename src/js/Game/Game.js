@@ -14,6 +14,7 @@ class Game {
     thisGame.initActions();
     thisGame.AddPlayersNameToPlayerPanel();
     thisGame.AddPlayerScoreToPlayerPanel();
+    thisGame.setActivePlayerPanel();
 
   }
 
@@ -47,6 +48,8 @@ class Game {
             }
           /*END LOOP: For each player in players object */
           }
+
+          thisGame.setActivePlayerPanel();
 
           thisGame.gameEnd();
         }
@@ -168,6 +171,7 @@ class Game {
     const thisGame = this;
 
     thisGame.changePlayerScore(winnerName);
+    thisGame.setActivePlayerPanel();
     thisGame.gameReset();
   }
 
@@ -237,6 +241,18 @@ class Game {
       }
 
       /*END LOOP: for every player in players */
+    }
+  }
+
+  setActivePlayerPanel() {
+    const thisGame = this;
+
+    /*START LOOP: For All players*/
+    for(let player in thisGame.players) {
+      /* Set active player panel */
+      thisGame.players[player].changeActiveClassPlayerPanel();
+
+    /*END LOOP: For All players*/
     }
   }
 
